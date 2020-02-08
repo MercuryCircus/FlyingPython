@@ -4,21 +4,18 @@
 #  K minimum = 0
 
 
-# class InvalidValue(Exception):
-#    def __init__(self, message):
-#        self.message = message
-
-
 def get_temp():
     while True:
         c = input("Welche Temperatur möchtest du von C in K umrechnen? ")
         try:
+            if c < -273.15:
+                raise Exception()
             c = float(c)
             return c
         except ValueError:
             print("Bitte gib eine Ganz- oder Kommazahl ein.")
-    #    except (c < -273.15):
-        #    print("Temperatur liegt unter absolut 0.")
+        except Exception:
+            print("Temperatur liegt unter absolut 0.")
 
 
 def convert_to_kelvin(c):
