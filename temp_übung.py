@@ -8,9 +8,9 @@ def get_temp():
     while True:
         c = input("Welche Temperatur möchtest du von C in K umrechnen? ")
         try:
+            c = float(c)
             if c < -273.15:
                 raise Exception()
-            c = float(c)
             return c
         except ValueError:
             print("Bitte gib eine Ganz- oder Kommazahl ein.")
